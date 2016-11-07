@@ -1,10 +1,16 @@
-function FeatureTest() = {};
+function FeatureTest(){};
+
+console.log("hellp")
 
 FeatureTest.prototype.visit = function (url) {
-
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "http://google.com");
+  xhr.responseType = "document";
+  xhr.send();
+  return xhr;
 };
 
-FeatureTest.prototype.fillIn = function (:field, :with) {
+FeatureTest.prototype.fillIn = function (field, content) {
 
 };
 
@@ -25,5 +31,5 @@ FeatureTest.prototype.statusCode = function () {
 };
 
 FeatureTest.prototype.toHaveLink = function () {
-  
+
 };

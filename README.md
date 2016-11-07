@@ -13,10 +13,6 @@ So I can record something I need to remember
 I can write a new note
 
 As a programmer
-So I can refer back to the note
-I can save the note
-
-As a programmer
 So I can read the details of the note
 I need each note to have its own page
 
@@ -27,3 +23,7 @@ I want each note to have a header
 As a programmer
 So I can find specific notes
 I want to search my notes by header
+
+As a programmer
+So I can refer back to the note
+I can save the note

@@ -1,10 +1,8 @@
 function FeatureTest(){};
 
-console.log("hellp")
-
 FeatureTest.prototype.visit = function (url) {
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "http://google.com");
+  xhr.open("GET", url);
   xhr.responseType = "document";
   xhr.send();
   return xhr;

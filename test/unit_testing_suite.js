@@ -49,5 +49,16 @@ var assert =  {
   	} else {
   		document.write("<div class=\"passed\">Test Passed</div>")
   	}
+  },
+
+  toRaise: function(block, assertionToCheck) {
+    try {block();}
+    catch(err) {if (err === assertionToCheck) {
+      document.write("<div class=\"passed\">Test Passed</div>");
+    } else {
+      console.log(err);
+      document.write("<div class=\"failed\">Test Failed</div>")
+    }}
+    finally {}
   }
 };

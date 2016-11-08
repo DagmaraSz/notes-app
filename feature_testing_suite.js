@@ -9,27 +9,29 @@ FeatureTest.prototype.visit = function (url, callback) {
       console.log(2);
       if(xhr.readyState === XMLHttpRequest.DONE /*&& xhr.status === 200 */) {
           console.log(3);
+          var parser = new DOMParser();
+          FeatureTest.page = parser.parseFromString(xhr.responseText, "text/xml");
           callback();
        }
     };
   xhr.send();
 };
 
-FeatureTest.prototype.fillIn = function (field, content, xhr) {
-  var parser = new DOMParser();
-  var xmlDoc = parser.parseFromString(xhr.responseText, "text/xml");
-  console.log(xmlDoc);
-  var input = xmlDoc.getElementsByName(field);
+FeatureTest.prototype.clickButton = function(id){
+  console.log(FeatureTest.page);
+  console.log(FeatureTest.page.getElementById(id));
+  // var myWindow = window.open();
+  // myWindow.document.write(FeatureTest.page);
+
+  FeatureTest.page.getElementById(id).dispatchEvent(new MouseEvent('click'));
+};
+
+FeatureTest.prototype.fillIn = function (field, content) {
+  console.log("fillin");
+  var input = FeatureTest.page.getElementsByName(field);
   input.textContent = content;
 };
 
-FeatureTest.prototype.clickButton = function(id){
-  var parser = new DOMParser();
-  var xmlDoc = parser.parseFromString(xhr.responseText, "text/xml");
-  console.log(xmlDoc);
-  console.log(xmlDoc.getElementById(id));
-  xmlDoc.getElementById(id).click();
-};
 
 FeatureTest.prototype.toHaveText = function(){
 

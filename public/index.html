@@ -3,8 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script src="js/notes.js"></script>
+    <script src="js/index.js"></script>
   </head>
   <body>
     <p>First note</p>
+    <p>2nd note</p>
+
+    <form id="new-note">
+      <label for="header">Title: </label>
+      <input type="text" name="header">
+      <label for="text">Note: </label>
+      <input type="text" name="text">
+      <input type="submit" name="submit" value="Add note">
+    </form>
   </body>
+  <script>
+  model = new Model();
+  document.getElementById("new-note")
+  .addEventListener("addnote", model.addNote("uhdsjh", "uhsdhd"));
+  </script>
 </html>

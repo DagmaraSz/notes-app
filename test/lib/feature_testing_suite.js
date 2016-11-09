@@ -26,10 +26,17 @@ FeatureTest.prototype.currentPath = function(){
 };
 
 FeatureTest.prototype.toHaveText = function(text){
+  var node = document.createElement("div");
   if (FeatureTest.xhr.responseText.includes(text)) {
-    document.write("<div class=\"passed\">Test Passed</div>")
+    var textnode = document.createTextNode("Test Passed");
+    node.appendChild(textnode);
+    node.className = "passed";
+    document.getElementById("body").appendChild(node);
   } else {
-    document.write("<div class=\"failed\">Test Failed</div>")
+    var textnode = document.createTextNode("Test Failed");
+    node.appendChild(textnode);
+    node.className = "failed";
+    document.getElementById("body").appendChild(node);
   }
 };
 

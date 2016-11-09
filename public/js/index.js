@@ -1,8 +1,9 @@
 function Model(){};
 
 Model.prototype = {
-  addNote: function(header, text){
-    this.getHeaderFromUrl();
+  addNote: function(){
+    var header = this.getHeaderFromUrl();
+    var text = this.getHeaderFromUrl();
     note = new Note(header, text);
 
   },

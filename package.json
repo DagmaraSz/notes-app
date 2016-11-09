@@ -1,18 +1,26 @@
 {
-  "name": "notes-app2",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "As a programmer So I can see all of my notes I want to list my notes on a webpage",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
   },
   "dependencies": {
-    "body-parser": "~1.15.2",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.2.0",
-    "ejs": "^2.5.2",
-    "express": "~4.14.0",
-    "morgan": "~1.7.0",
-    "nodemon": "^1.11.0",
-    "serve-favicon": "~2.3.0"
-  }
+    "http-server": "^0.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feezy26/notes-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/feezy26/notes-app/issues"
+  },
+  "homepage": "https://github.com/feezy26/notes-app#readme"
 }

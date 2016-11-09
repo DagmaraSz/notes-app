@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="stylesheets/index.css">
     <title></title>
     <script src="js/notes.js"></script>
+    <script src="js/notebook.js"></script>
     <script src="js/index.js"></script>
     <script>
     var model = new Model();
@@ -12,21 +13,21 @@
   </head>
   <body>
     <article class="main-content">
-      <div class="left-content">
+      <div id="left-content">
         <a href="#First_note" ><p>First note</p></a>
         <p>2nd note</p>
       </div>
       <div class="right-content">
-        
+
       </div>
     </article>
     <span class="note-form">
-      <form id="new-note" href="#" onsubmit="return model.addNote(); return false;">
+      <form id="new-note" action="#">
       <label for="header">Title: </label>
       <input type="text" name="header">
       <label for="text">Note: </label>
       <input type="text" name="text">
-      <input type="submit" name="submit" value="Add note">
+      <input type="button" name="submit" value="Add note" onclick="model.addNote()">
     </form>
   </span>
   </body>

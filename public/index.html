@@ -2,23 +2,32 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/index.css">
     <title></title>
     <script src="js/notes.js"></script>
     <script src="js/index.js"></script>
     <script>
-    model = new Model();
+    var model = new Model();
     </script>
   </head>
   <body>
-    <p>First note</p>
-    <p>2nd note</p>
-
-    <form id="new-note" href="#" onsubmit="model.addNote()">
+    <article class="main-content">
+      <div class="left-content">
+        <a href="#First_note" ><p>First note</p></a>
+        <p>2nd note</p>
+      </div>
+      <div class="right-content">
+        
+      </div>
+    </article>
+    <span class="note-form">
+      <form id="new-note" href="#" onsubmit="return model.addNote(); return false;">
       <label for="header">Title: </label>
       <input type="text" name="header">
       <label for="text">Note: </label>
       <input type="text" name="text">
       <input type="submit" name="submit" value="Add note">
     </form>
+  </span>
   </body>
 </html>

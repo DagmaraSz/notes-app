@@ -9,16 +9,19 @@
     <script src="js/index.js"></script>
     <script src="test/lib/unit_testing_suite.js"></script>
     <script src="test/lib/feature_testing_suite.js"></script>
-    <script src="test/spec/noteSpec.js"></script>
     <script>
     var model = new Model();
     </script>
+      <script src="test/spec/noteSpec.js"></script>
   </head>
   <body>
     <article class="main-content">
       <div id="left-content">
+
+        <a id="bosco" href="#First_note"><p>First note</p></a>
+        <p>2nd note</p>
       </div>
-      <div class="right-content">
+      <div id="right-content">
 
       </div>
     </article>
@@ -32,4 +35,10 @@
     <!-- </form> -->
   </span>
   </body>
+  <script>
+    hashChangeListener();
+    function hashChangeListener() {
+      window.addEventListener("hashchange", model.showNote());
+    };
+  </script>
 </html>

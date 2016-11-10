@@ -1,62 +1,62 @@
 var assert =  {
   isTrue: function(assertionToCheck) {
     if (!assertionToCheck) {
-      document.write("<div class=\"failed\">Test Failed</div>")
+      console.log("Failed");
     }
     else {
-    	document.write("<div class=\"passed\">Test Passed</div>")
+    	console.log("Passed");
     }
   },
 
   isFalse: function(assertionToCheck) {
   	if (assertionToCheck) {
-  		document.write("<div class=\"failed\">Test Failed</div>")
+  		console.log("Failed");
   	}
 		else {
-			document.write("<div class=\"passed\">Test Passed</div>")
+			console.log("Passed");
 		}
   },
 
   toBe: function(currentValue, assertionToCheck) {
   	if (assertionToCheck === currentValue) {
-  		document.write("<div class=\"passed\">Test Passed</div>")
+  		console.log("Passed");
   	}
 		else {
-			document.write("<div class=\"failed\">Test Failed</div>")
+			console.log("Failed");
 		}
   },
 
   notToBe: function(currentValue, assertionToCheck) {
   	if (assertionToCheck === currentValue) {
-  		document.write("<div class=\"failed\">Test Failed</div>")
+  		console.log("Failed");
   	}
 		else {
-			document.write("<div class=\"passed\">Test Passed</div>")
+			console.log("Passed");
 		}
   },
 
   toContain: function(currentValue, assertionToCheck) {
   	if(currentValue.includes(assertionToCheck)) {
-  	  document.write("<div class=\"passed\">Test Passed</div>")
+  	  console.log("Passed");
   	} else {
-  		document.write("<div class=\"failed\">Test Failed</div>")
+  		console.log("Failed");
   	}
   },
 
   notToContain: function(currentValue, assertionToCheck) {
   	if(currentValue.includes(assertionToCheck)) {
-  	  document.write("<div class=\"failed\">Test Failed</div>")
+  	  console.log("Failed");
   	} else {
-  		document.write("<div class=\"passed\">Test Passed</div>")
+  		console.log("Passed");
   	}
   },
 
   toRaise: function(block, assertionToCheck) {
     try {block();}
     catch(err) {if (err === assertionToCheck) {
-      document.write("<div class=\"passed\">Test Passed</div>");
+      console.log("Passed");
     } else {
-      document.write("<div class=\"failed\">Test Failed</div>")
+      console.log("Failed");
     }}
   }
 };

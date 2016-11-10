@@ -23,6 +23,16 @@ window.onload = function() {
 	  console.log("Failed: Doesn't have content");
 	}
 
+// text if header is a link
+	if (document.getElementsByTagName("a")[1].innerHTML == "Panda") {
+		console.log("Passed: Header is a link");
+	} else {console.log("Failed: Header is not a link");
+	}
+	if (document.getElementsByTagName("a")[1].href == "http://localhost:8080/#") {
+		console.log("Passed: link is '#' ");
+	} else {console.log("Failed: link is not '#' ");}
+};
+
 // test for url with hashchange
 	document.getElementById("bosco").click();
 

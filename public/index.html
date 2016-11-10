@@ -25,13 +25,13 @@
       </div>
     </article>
     <span class="note-form">
-      <form id="new-note" action="#">
+      <!-- <form id="new-note" action="#"> -->
       <label for="header">Title: </label>
-      <input type="text" name="header">
+      <input type="text" id="header">
       <label for="text">Note: </label>
-      <input type="text" name="text">
-      <input type="button" name="submit" value="Add note" onclick="model.addNote()">
-    </form>
+      <input type="text" id="text">
+      <input type="button" name="submit" value="Add note" onclick="model.addNote()" id="addNote">
+    <!-- </form> -->
   </span>
   </body>
 </html>

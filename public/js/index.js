@@ -29,6 +29,13 @@ Model.prototype = {
     noteNode.appendChild(noteTextNode);
     node.appendChild(noteNode);
     document.getElementById("left-content").appendChild(node);
+  },
+
+  showNote: function(){
+    var node = document.createElement("DIV");
+    var textNode = document.createTextNode("Sloth");
+    node.appendChild(textNode);
+    document.getElementById("right-content").appendChild(node);
   }
 
 };

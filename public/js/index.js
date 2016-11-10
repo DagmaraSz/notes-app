@@ -13,10 +13,10 @@ Model.prototype = {
     this.updateNoteList();
   },
   getHeader: function() {
-    return document.getElementsByName("header")[0].value
+    return document.getElementById("header").value
   },
   getText: function() {
-    return document.getElementsByName("text")[0].value
+    return document.getElementById("text").value
   },
   updateNoteList(){
     var node = document.createElement("DIV");

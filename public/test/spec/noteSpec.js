@@ -32,6 +32,14 @@ window.onload = function() {
 		console.log("Failed: hashchange test");
 	}
 
+// test for smth showing up after clicking header
+	document.getElementById("bosco").click();
+	if (document.getElementById("right-content").innerText.includes("Sloth")){
+		console.log("Passed: Showing Sloth in note space");
+	} else {
+		console.log("Failed: Not showing Sloth in note space");
+	}
+
 };
 
 note = new Note("First note", "Julio, Dagmara, Caitlin, Mike and Asif");

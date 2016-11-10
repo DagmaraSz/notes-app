@@ -31,9 +31,8 @@ window.onload = function() {
 	if (document.getElementsByTagName("a")[1].href == "http://localhost:8080/#") {
 		console.log("Passed: link is '#' ");
 	} else {console.log("Failed: link is not '#' ");}
-};
 
-// test for url with hashchange
+	// test for url with hashchange
 	document.getElementById("bosco").click();
 
 	if (window.location.hash.split("#")[1] === "First_note"){
@@ -42,15 +41,28 @@ window.onload = function() {
 		console.log("Failed: hashchange test");
 	}
 
-// test for smth showing up after clicking header
+	// test for smth showing up after clicking header
 	document.getElementById("bosco").click();
 	if (document.getElementById("right-content").innerText.includes("Sloth")){
 		console.log("Passed: Showing Sloth in note space");
 	} else {
 		console.log("Failed: Not showing Sloth in note space");
 	}
-
+	// test for viewing single note
+	document.getElementById("bosco").click();
+	if (document.getElementById("right-content").innerText.includes("Panda")){
+		console.log("Passed: Showing note header");
+	} else {
+		console.log("Failed: Not showing note header");
+	}
+	if (document.getElementById("right-content").innerText.includes("Bala")){
+		console.log("Passed: Showing note text");
+	} else {
+		console.log("Failed: Not showing note text");
+	}
 };
+
+
 
 note = new Note("First note", "Julio, Dagmara, Caitlin, Mike and Asif");
 

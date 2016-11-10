@@ -13,12 +13,18 @@ FeatureTest.prototype.visit = function (url, callback) {
   xhr.send();
 };
 
-FeatureTest.prototype.fillIn = function (field, content) {
 
+FeatureTest.prototype.clickButton = function(id){
+  console.log(FeatureTest.xhr);
+  var myWindow = window.open(FeatureTest.xhr);
+  myWindow.document.getElementById(id).click();
+  // FeatureTest.page.getElementById(id).dispatchEvent(new MouseEvent('click'));
 };
 
-FeatureTest.prototype.clickButton = function(identifier){
-
+FeatureTest.prototype.fillIn = function (field, content) {
+  console.log("fillin");
+  var input = FeatureTest.page.getElementsByName(field);
+  input.textContent = content;
 };
 
 FeatureTest.prototype.currentPath = function(){

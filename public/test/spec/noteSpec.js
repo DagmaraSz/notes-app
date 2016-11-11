@@ -1,6 +1,6 @@
 //tests adding a note
 function beforeAll(callback){
-	document.getElementById("text").value = "Bala";
+	document.getElementById("text").value = "Julio, Dagmara, Caitlin, Mike and Asif";
 	document.getElementById("header").value = "Panda";
 	document.getElementById("addNote").click();
 	document.getElementsByTagName("a")[0].click();
@@ -17,10 +17,16 @@ window.onload = function() {
 		} else {
 			console.log("Failed: Doesn't have header");
 		}
-		if (document.getElementById("left-content").innerText.includes("Bala")){
-			console.log("Passed: Content present");
+		if (!document.getElementById("left-content").innerText.includes("lin, Mike and Asif")){
+			console.log("Passed: Note is abbreviated");
 		} else {
-			console.log("Failed: Doesn't have content");
+			console.log("Failed: Note is not abbreviated");
+		}
+
+		if (document.getElementById("left-content").innerText.includes("Julio, Dagmara, Cait")){
+			console.log("Passed: Abbreviated note showing");
+		} else {
+			console.log("Failed: Abbreviated note is not showing");
 		}
 
 		// test if header is a link
@@ -44,7 +50,7 @@ window.onload = function() {
 		} else {
 			console.log("Failed: Not showing note header");
 		}
-		if (document.getElementById("right-content").innerText.includes("Bala")){
+		if (document.getElementById("right-content").innerText.includes("Julio, Dagmara, Caitlin, Mike and Asif")){
 			console.log("Passed: Showing note text");
 		} else {
 			console.log("Failed: Not showing note text");

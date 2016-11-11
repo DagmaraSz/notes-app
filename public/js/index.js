@@ -26,7 +26,7 @@ Model.prototype = {
     headerContainer.appendChild(headerText);
     node.appendChild(headerContainer);
     var noteContainer = document.createElement("P");
-    var noteText = document.createTextNode(this.notebook.notes[this.notebook.notes.length-1].text);
+    var noteText = document.createTextNode(this.notebook.notes[this.notebook.notes.length-1].shortText);
     noteContainer.appendChild(noteText);
     node.appendChild(noteContainer);
     document.getElementById("left-content").appendChild(node);

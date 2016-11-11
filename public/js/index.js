@@ -1,8 +1,8 @@
-function Model(){
+function Controller(){
   this.notebook = new Notebook();
 }
 
-Model.prototype = {
+Controller.prototype = {
   addNote: function(){
     var header = this.getHeader();
     var text = this.getText();
@@ -35,8 +35,8 @@ Model.prototype = {
   showNote: function(){
     document.getElementById("right-content").innerHTML = "";
     var node = document.createElement("DIV");
-    var fullNoteId = model.getIdFromUrl(window.location)
-    var fullNote = model.notebook.notes[fullNoteId - 1];
+    var fullNoteId = controller.getIdFromUrl(window.location)
+    var fullNote = controller.notebook.notes[fullNoteId - 1];
     var noteText = document.createTextNode(fullNote.text);
     node.appendChild(noteText);
     document.getElementById("right-content").appendChild(node);
@@ -52,9 +52,9 @@ Model.prototype = {
     }
 };
 
-Model.prototype.getIdFromUrl = function(l) {
+Controller.prototype.getIdFromUrl = function(l) {
     return l.hash.split("#")[1]
  };
 
-var model = new Model();
-model.hashChangeListener();
+var controller = new Controller();
+controller.hashChangeListener();

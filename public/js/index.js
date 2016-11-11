@@ -35,12 +35,13 @@ Model.prototype = {
   showNote: function(){
     document.getElementById("right-content").innerHTML = "";
     var node = document.createElement("DIV");
-    var fullNoteId = model.getIdFromUrl(window.location)
+    var fullNoteId = model.getIdFromUrl(window.location);
     var fullNote = model.notebook.notes[fullNoteId - 1];
+    var noteHeader = document.createTextNode(fullNote.header);
     var noteText = document.createTextNode(fullNote.text);
+    node.appendChild(noteHeader);
     node.appendChild(noteText);
     document.getElementById("right-content").appendChild(node);
-
   },
 
     hashChangeListener: function () {
@@ -48,12 +49,12 @@ Model.prototype = {
     },
 
     getIdFromUrl: function (l) {
-      return l.hash.split("#")[1]
+      return l.hash.split("#")[1];
     }
 };
 
 Model.prototype.getIdFromUrl = function(l) {
-    return l.hash.split("#")[1]
+    return l.hash.split("#")[1];
  };
 
 var model = new Model();

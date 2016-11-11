@@ -4,7 +4,6 @@ function Model(){
 
 Model.prototype = {
   addNote: function(){
-    console.log("added note")
     var header = this.getHeader();
     var text = this.getText();
     note = new Note(header, text);
@@ -35,14 +34,13 @@ Model.prototype = {
 
   showNote: function(){
     document.getElementById("right-content").innerHTML = "";
-    console.log("SHOW NOTE!!")
     var node = document.createElement("DIV");
-    var fullNoteId = model.getIdFromUrl(window.location) 
+    var fullNoteId = model.getIdFromUrl(window.location)
     var fullNote = model.notebook.notes[fullNoteId - 1];
     var noteText = document.createTextNode(fullNote.text);
     node.appendChild(noteText);
     document.getElementById("right-content").appendChild(node);
-     
+
   },
 
     hashChangeListener: function () {
@@ -59,7 +57,4 @@ Model.prototype.getIdFromUrl = function(l) {
  };
 
 var model = new Model();
-window.onload = function() {
 model.hashChangeListener();
-}
-

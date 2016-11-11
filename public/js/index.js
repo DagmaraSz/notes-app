@@ -18,23 +18,43 @@ Model.prototype = {
   },
   updateNoteList: function() {
     var node = document.createElement("DIV");
-    var headerNode = document.createElement("a");
-    var desiredLink = "#";
-    headerNode.setAttribute("href", desiredLink);
-    var headerTextNode = document.createTextNode(this.notebook.notes[this.notebook.notes.length-1].header);
-    headerNode.appendChild(headerTextNode);
-    node.appendChild(headerNode);
-    var noteNode = document.createElement("P");
-    var noteTextNode = document.createTextNode(this.notebook.notes[this.notebook.notes.length-1].text);
-    noteNode.appendChild(noteTextNode);
-    node.appendChild(noteNode);
+    node.setAttribute("id", this.notebook.notes.length);
+    var headerContainer = document.createElement("a");
+    var desiredLink = "#" + this.notebook.notes.length;
+    headerContainer.setAttribute("href", desiredLink);
+    var headerText = document.createTextNode(this.notebook.notes[this.notebook.notes.length-1].header);
+    headerContainer.appendChild(headerText);
+    node.appendChild(headerContainer);
+    var noteContainer = document.createElement("P");
+    var noteText = document.createTextNode(this.notebook.notes[this.notebook.notes.length-1].text);
+    noteContainer.appendChild(noteText);
+    node.appendChild(noteContainer);
     document.getElementById("left-content").appendChild(node);
   },
 
   showNote: function(){
+    document.getElementById("right-content").innerHTML = "";
     var node = document.createElement("DIV");
-    var textNode = document.createTextNode("Sloth");
-    node.appendChild(textNode);
+    var fullNoteId = model.getIdFromUrl(window.location)
+    var fullNote = model.notebook.notes[fullNoteId - 1];
+    var noteText = document.createTextNode(fullNote.text);
+    node.appendChild(noteText);
     document.getElementById("right-content").appendChild(node);
-  }
+
+  },
+
+    hashChangeListener: function () {
+      window.addEventListener("hashchange", this.showNote);
+    },
+
+    getIdFromUrl: function (l) {
+      return l.hash.split("#")[1]
+    }
 };
+
+Model.prototype.getIdFromUrl = function(l) {
+    return l.hash.split("#")[1]
+ };
+
+var model = new Model();
+model.hashChangeListener();

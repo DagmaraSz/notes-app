@@ -37,10 +37,11 @@ Controller.prototype = {
     var node = document.createElement("DIV");
     var fullNoteId = controller.getIdFromUrl(window.location)
     var fullNote = controller.notebook.notes[fullNoteId - 1];
+    var noteHeader = document.createTextNode(fullNote.header);
     var noteText = document.createTextNode(fullNote.text);
+    node.appendChild(noteHeader);
     node.appendChild(noteText);
     document.getElementById("right-content").appendChild(node);
-
   },
 
     hashChangeListener: function () {
@@ -48,7 +49,7 @@ Controller.prototype = {
     },
 
     getIdFromUrl: function (l) {
-      return l.hash.split("#")[1]
+      return l.hash.split("#")[1];
     }
 };
 

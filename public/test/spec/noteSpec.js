@@ -66,4 +66,4 @@ note = new Note("First note", "Julio, Dagmara, Caitlin, Mike and Asif");
 
 assert.toBe(note.header, "First note");
 assert.toBe(note.text, "Julio, Dagmara, Caitlin, Mike and Asif");
-assert.toBe(note.shortText, "Julio, Dagmara, Cait");
+assert.toBe(note.abbreviate(), "Julio, Dagmara, Cait");

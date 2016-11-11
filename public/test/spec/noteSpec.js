@@ -24,18 +24,18 @@ window.onload = function() {
 	}
 
 // text if header is a link
-	if (document.getElementsByTagName("a")[1].innerHTML == "Panda") {
+	if (document.getElementsByTagName("a")[0].innerHTML == "Panda") {
 		console.log("Passed: Header is a link");
 	} else {console.log("Failed: Header is not a link");
 	}
-	if (document.getElementsByTagName("a")[1].href == "http://localhost:8080/#") {
+	if (document.getElementsByTagName("a")[0].href == "http://localhost:8080/#1") {
 		console.log("Passed: link is '#' ");
 	} else {console.log("Failed: link is not '#' ");}
 
 	// test for url with hashchange
-	document.getElementById("bosco").click();
+	document.getElementById("1").click();
 
-	if (window.location.hash.split("#")[1] === "First_note"){
+	if (window.location.hash.split("#")[1] === "1"){
 		console.log("Passed: hashchange test");
 	} else {
 		console.log("Failed: hashchange test");

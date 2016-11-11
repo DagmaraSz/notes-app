@@ -26,6 +26,6 @@ Controller.prototype = {
 // Controller.prototype.getIdFromUrl = function(l) {
 //     return l.hash.split("#")[1]
 //  };
-
+var view = new View();
 var controller = new Controller();
 controller.hashChangeListener();

@@ -42,14 +42,14 @@ window.onload = function() {
 	}
 
 	// test for smth showing up after clicking header
-	document.getElementById("bosco").click();
-	if (document.getElementById("right-content").innerText.includes("Sloth")){
-		console.log("Passed: Showing Sloth in note space");
-	} else {
-		console.log("Failed: Not showing Sloth in note space");
-	}
+	// document.getElementById("bosco").click();
+	// if (document.getElementById("right-content").innerText.includes("Sloth")){
+	// 	console.log("Passed: Showing Sloth in note space");
+	// } else {
+	// 	console.log("Failed: Not showing Sloth in note space");
+	// }
 	// test for viewing single note
-	document.getElementById("bosco").click();
+	document.getElementById("1").click();
 	if (document.getElementById("right-content").innerText.includes("Panda")){
 		console.log("Passed: Showing note header");
 	} else {

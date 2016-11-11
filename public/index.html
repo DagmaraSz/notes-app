@@ -17,9 +17,6 @@
   <body>
     <article class="main-content">
       <div id="left-content">
-
-        <a id="bosco" href="#First_note"><p>First note</p></a>
-        <p>2nd note</p>
       </div>
       <div id="right-content">
 
@@ -36,9 +33,15 @@
   </span>
   </body>
   <script>
+    
     hashChangeListener();
     function hashChangeListener() {
       window.addEventListener("hashchange", model.showNote());
     };
+
+    function getIdFromUrl(location) {
+      return location.hash.split("#")[1]
+    }
+
   </script>
 </html>
